@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/django,python,pycharm
-# Edit at https://www.gitignore.io/?templates=django,python,pycharm
+# Created by https://www.gitignore.io/api/pycharm,vscode,python,django,venv,env
+# Edit at https://www.gitignore.io/?templates=pycharm,vscode,python,django,venv,env
 
 ### Django ###
 *.log
@@ -118,6 +118,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#!! ERROR: env is undefined. Use list command to see defined gitignore types !!#
 
 ### PyCharm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
@@ -254,4 +256,19 @@ fabric.properties
 
 # Pyre type checker
 
-# End of https://www.gitignore.io/api/django,python,pycharm
+### venv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+pyvenv.cfg
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-selfcheck.json
+
+#!! ERROR: vscode is undefined. Use list command to see defined gitignore types !!#
+
+# End of https://www.gitignore.io/api/pycharm,vscode,python,django,venv,env
