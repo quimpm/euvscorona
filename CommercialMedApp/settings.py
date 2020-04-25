@@ -62,7 +62,7 @@ ROOT_URLCONF = 'CommercialMedApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["CommercialMedApp/templates/"],
+        'DIRS': ['CommercialMedApp/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
