@@ -6,3 +6,4 @@ psycopg2-binary==2.8.4
 dj-database-url==0.5.0
 whitenoise==5.0.1
 django-crispy-forms==1.8.0
+django-adminlte3
