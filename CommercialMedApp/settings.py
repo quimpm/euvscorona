@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.pages',
+    'apps.users',
     'crispy_forms',
     'adminlte3',
 ]
@@ -129,4 +130,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-
+AUTH_USER_MODEL = 'users.CustomUser'
