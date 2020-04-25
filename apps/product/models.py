@@ -11,7 +11,7 @@ class Tag(models.Model):
 
 
 class Product(models.Model):
-    creator = models.ForeignKey(User, on_delete=models.CASCADE)
+    creator = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
     name = models.CharField(max_length=78)
     description = models.TextField()
