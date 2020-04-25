@@ -1,0 +1,22 @@
+{% extends 'adminlte/login.html' %}
+
+{% load static %}
+
+{% block stylesheets %}
+        {% include 'adminlte/lib/_styles.html' %}
+        <link rel="stylesheet" href="{% static 'css/img.css' %}">
+{% endblock %}
+
+{% block title %}{{ "ComeerceMed" }}{% endblock %}
+{% block content %}
+{% block logo %}
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="ComercialMed Logo" class="img-size-200 img-circle center" style="opacity: .8">
+        </div>
+        <div class="login-logo">
+            {# Mirrors block names used in _main_header.html #}
+            <a href="{% block logo_href %}/{% endblock %}">{% block logo_text %}<b>Comerce</b>Med{% endblock %}</a>
+        </div>
+        {% endblock %}
+
+{% endblock %}

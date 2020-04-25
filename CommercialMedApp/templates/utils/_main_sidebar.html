@@ -1,0 +1,49 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+
+{% load static %}
+{% load adminlte_helpers %}
+
+{% block logo %}
+        <a href="/" class="brand-link">
+            <img src="{% static 'img/logo.png' %}" alt="ComercialMed Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            {% block logo_text %}<span class="brand-text font-weight-light">ComercialMed</span>{% endblock %}
+        </a>
+{% endblock %}
+{% block user_panel %}
+        <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{% static 'img/profile.jpg' size=90 %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{% firstof request.user.get_full_name request.user.username %}</a>
+        </div>
+        <div class="info">
+            <a href="#" class="d-block">Edit profile</a>
+            <a href="#" class="d-block">Logout</a>
+        </div>
+      </div>
+{% endblock %}
+{% block nav_heading %}About ComerceMed{% endblock %}
+{% block nav_links %}
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tags"></i> 
+                        <p>Services</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-question"></i> 
+                        <p>How to use</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas  fa-balance-scale"></i> 
+                        <p>Terms and conditions</p>
+                    </a>
+                </li>
+                
+                
+            {% endblock nav_links %}
