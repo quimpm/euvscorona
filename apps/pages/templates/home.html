@@ -1,7 +1,64 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ "ComeerceMed" }}{% endblock %}
+{% load static %}
+
+{% block stylesheets %}
+        {% include 'adminlte/lib/_styles.html' %}
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="{% static 'css/img.css' %}">
+{% endblock %}
+
+{% block nav_sidebar %}
+    {% include 'utils/_home_sidebar.html' %}
+{% endblock %}
+
+{% block nav_header %}{% endblock %}
 
 {% block content %}
-Hello, World!
+<div class="imgbox">
+    <img class="center-fit" src="{% static 'img/back.png' size=120%}" alt="Architecture">
+</div>
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+    <!-- About Section -->
+    <div class="w3-container w3-padding-32 " id="about">
+      <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h2>
+      <p>Nowadays, with the arrival of the new economic consequences of the coronavirus crisis, our main inspiration raised on how to increase the efficiency to reduce the transaction costs in every European business.     
+        <br>CommerMed helps companies to find other companies in Europe, which they manufacture or produces what the company needs.
+        <br>P. E. Imagine a company that manufactures sanitary napkins. Probably it's obtaining the raw material from some Chinese factory. Increasing Europe's internal economy has always been an important mission, but with the economic crisis caused by the coronavirus, it is even more essential.CommerceMed will help this company in the example to contact easily with other companies (in Europe) that produce the raw material that it needs.
+      </p>
+    </div>
+  
+    <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="{% static 'img/OriolAlas.jpg' size=100%}"  alt="Oriol Alàs" style="width:100%">
+        <h3>Oriol Alàs</h3>
+        <p class="w3-opacity">Developer</p>
+        <!--<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+        <p><a href="https://www.linkedin.com/in/oriolac/"class="w3-button w3-grey w3-block">Contact</a></p>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="{% static 'img/AlbaLamas.jpg' size=100%}" alt="Jane" style="width:100%">
+        <h3>Alba Lamas</h3>
+        <p class="w3-opacity">Developer</p>
+        <!--<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+        <p><a href="https://www.linkedin.com/in/alba-lamas/"class="w3-button w3-grey w3-block">Contact</a></p>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="{% static 'img/QuimPico.png' size=100%}" alt="Mike" style="width:100%">
+        <h3>Quim Picó</h3>
+        <p class="w3-opacity">Developer</p>
+        <!--<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+        <p><a href="https://www.linkedin.com/in/joaquim-pic%C3%B3-mora-9a290517b/"class="w3-button w3-grey w3-block">Contact</a></p>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="{% static 'img/SergiSimon.jpg' size=100%}" alt="Dan" style="width:100%">
+        <h3>Sergi Simon</h3>
+        <p class="w3-opacity">Developer</p>
+        <!--<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+        <p><a href="https://www.linkedin.com/in/sergi-sim%C3%B3n-balcells-964b28195/"class="w3-button w3-grey w3-block">Contact</a></p>
+      </div>
+    </div>
+  
 {% endblock %}
