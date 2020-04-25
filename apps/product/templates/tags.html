@@ -3,5 +3,24 @@
 {% block title %}{{ "ComeerceMed" }}{% endblock %}
 
 {% block content %}
-Hello, World!
+<div class="container" style="background-color: ;">
+    <div class="col-xs-12">
+        <input type="text" placeholder="Warite a key word and search" id="sercher">
+        <a href="{% url 'nearbytag' project.pk %}" class="btn btn-primary">Search</a>
+    </div>
+    <div class="col-xs-12">
+        {% for product in products %}
+            <div class="col-xs-4">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ product.name }}</h5>
+                      <p class="card-text">{{ product.description }}</p>
+                      <a href="#" class="btn btn-primary">Know more</a>
+                    </div>
+                  </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
