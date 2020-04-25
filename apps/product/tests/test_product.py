@@ -6,8 +6,10 @@ from django.contrib.auth import get_user_model
 class CustomProductTest(TestCase):
 
     def test_simple_product(self):
-        parent_tag = Tag.objects.create(name='Alimentation', parent=None)
-        son_tag = Tag.objects.create(name='Potatoes', parent=parent_tag)
+        parent_tag = Tag(name='Alimentation', parent=None)
+        parent_tag.save()
+        son_tag = Tag(name='Potatoes', parent=parent_tag)
+        son_tag.save()
         User = get_user_model()
         user = User.objects.create_user(
             username="wil",
@@ -21,12 +23,13 @@ class CustomProductTest(TestCase):
             description='Some weird description',
             country='ES',
         )
-        product = Product.objects.create(
+        product = Product(
             creator=user,
             tag=son_tag,
             name='Patata Manhattan',
             description='45kg bag of potatoes',
         )
+        product.save()
         self.assertEquals(user, product.creator)
         self.assertEquals(son_tag, product.tag)
         self.assertEquals(parent_tag, product.tag.parent)

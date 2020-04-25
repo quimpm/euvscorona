@@ -3,6 +3,7 @@ from django.db import models
 
 
 # Create your models here.
+
 class CustomUser(AbstractUser):
     STATES = [
             ("AT", "Austria"),
@@ -35,10 +36,13 @@ class CustomUser(AbstractUser):
             ]
     photo = models.ImageField(upload_to='img/user/', default=None, blank=True)
     description = models.TextField(blank=True)
-    tin = models.CharField(max_length=32, unique=True)
+    tin = models.CharField(max_length=32, unique=True, blank=True)
     country = models.CharField(max_length=2, choices=STATES, default="DE", blank=True)
-    fiscal_address = models.CharField(max_length=200)
-    phone = models.CharField(max_length=15)
-    lat = models.FloatField()
-    lon = models.FloatField()
+    fiscal_address = models.CharField(max_length=200, blank=True)
+    phone = models.CharField(max_length=15, blank=True)
+    lat = models.FloatField(null=True)
+    lon = models.FloatField(null=True)
+
     REQUIRED_FIELDS = ['tin', 'fiscal_address', 'phone', 'lat', 'lon']
+
+
