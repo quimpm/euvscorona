@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'crispy_forms'
+    # Third Party apps
+    'crispy_forms',
+
+    # Local apps
+    'apps.users'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -129,4 +133,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-
+AUTH_USER_MODEL = 'users.CustomUser'
