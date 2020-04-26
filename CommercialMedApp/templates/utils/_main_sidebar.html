@@ -15,9 +15,9 @@
     {% if user.is_authenticated %}
         <div class="image">
         {% if profile.user.first_name == '' %}
-            <img src="{{ user.photo.url }}"  class="img-circle elevation-2" alt="User Image" style="width: 100%;height: auto;">
+            <img src="{{ user.photo.url }}"  class="img-circle elevation-2 img-fluid" alt="User Image">
         {% else %}  
-            <img src="{{ user.photo.url }}" class="img-circle elevation-2" alt="User Image" style="width: 100%;height: auto;">
+            <img src="{{ user.photo.url }}" class="img-circle elevation-2 img-fluid" alt="User Image">
         {% endif %}
         </div>
         <div class="info">
