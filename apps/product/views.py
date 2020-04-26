@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from apps.product.models import Tag, Product
@@ -7,26 +8,21 @@ import utilities.src.latlon as latlon
 
 # Create your views here.
 class NearbyProductsByTagList(LoginRequiredMixin, ListView):
-    template_name = 'product/tags.html'
+    model = Product
     context_object_name = 'products'
-    login_url = reverse_lazy('login')
+    template_name = 'product/tags.html'
+    
     
     def get_queryset(self):
-        tag = get_object_or_404(Tag, name=self.kwargs['tag'])
-        objs = Product.objects.filter(tag=tag)
+        def get_key(func):
+            def a(product):
+                return(func(product.creator))
+            return a
         px = latlon.Point(self.request.user.lat, self.request.user.lon)
-        return sorted(objs, key=latlon.get_lanlonkey(px))
-
-class TagAllList(LoginRequiredMixin, ListView):
-    template_name = 'product/tags.html'
-    context_object_name = 'products'
-    login_url = reverse_lazy('login')
-    
-    def get_queryset(self):
-        tag = get_object_or_404(Tag, name='all')
-        objs = Product.objects.filter(tag=tag)
-        print(self.request)
-        px = latlon.Point(self.request.user.lat, self.request.user.lon)
-        return sorted(objs, key=latlon.get_lanlonkey(px))
-
+        tag = self.request.GET.get('q', 'all')
+        tags = Tag.objects.get(name=tag)
+        if tag == "all":
+            return sorted(Product.objects.all(), key=get_key(latlon.get_lanlonkey(px)))
+        objs = Product.objects.filter(tag=tags)
+        return sorted(objs, key=get_key(latlon.get_lanlonkey(px)))
 

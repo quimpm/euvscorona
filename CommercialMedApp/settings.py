@@ -131,7 +131,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-LOGIN_REDIRECT_URL = 'all'
+LOGIN_REDIRECT_URL = 'nearbytag'
 LOGOUT_REDIRECT_URL = 'home'
 
 AUTH_USER_MODEL = 'users.CustomUser'
