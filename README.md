@@ -1,12 +1,36 @@
 # CommerceMED 
 ![CommerceMED](https://i.ibb.co/yfwPJJZ/logo.png)
 
-## Usage
+## Inspiration
+Nowadays, with the arrival of the new economic consequences of the coronavirus crisis, our main inspiration raised on how to increase the efficiency to reduce the transaction costs in every European business.
 
+## What it does
+CommerMed helps companies to find other companies in Europe, which they manufacture or produces what the company needs. 
 
-## Run
+e.g. Imagine a company that manufactures sanitary napkins. Probably it's obtaining the raw material from some Chinese factory. Increasing Europe's internal economy has always been an important mission, but with the economic crisis caused by the coronavirus, it is even more essential.CommerceMed will help this company in the example to contact easily with other companies (in Europe) that produce the raw material that it needs.
+
+## How we built it
+We build with a lot of love and with expectations about a good (healthily and economically) future for all us.
+
+Technically front-end and back-end are built with Django, knows as "the Web framework for perfectionists with deadlines". With this, the architecture of the application is an MVT architecture (Model-View-Template). Data is managed with Postgresql. We have used Docker for simplifying and to accelerating the workflow.
+
+## Challenges I ran into
+Make an application usable enough, for connecting companies. **All the application has been made during the weekend.**
+
+## What's next for ComercialMedApp
+Implement directly communication (e.g. via chat).
+To build a feed page. 
+
+## Run locally
+```
+docker-compose build
+```
+```
 docker-compose up
-
+```
+```
+docker-compose exec web python manage.py migrate
+```
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
