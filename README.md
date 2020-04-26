@@ -21,12 +21,10 @@ Make an application usable enough, for connecting companies. **All the applicati
 Implement directly communication (e.g. via chat).
 To build a feed page. 
 
-
-## Usage
-
-
-## Run
+## Run locally
+docker-compose build
 docker-compose up
+docker-compose exec web python manage.py migrate
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
