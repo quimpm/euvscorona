@@ -18,3 +18,5 @@ class LatLonTest(unittest.TestCase):
         res = sorted([self.p2, self.p1], key=keyfunction)
         self.assertEqual(expected, res)
 
+if __name__ == "__main__":
+    unittest.main()
