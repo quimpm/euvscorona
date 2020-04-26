@@ -17,7 +17,7 @@
         </div>
           {% if user.is_authenticated %}
         <div class="info">
-          <a href="#" class="d-block">{% firstof request.user.get_full_name request.user.username %}</a>
+          <a href="{% url 'perfil' user.pk %}" class="d-block">{% firstof request.user.get_full_name request.user.username %}</a>
         </div>
           {% else %}
         <div class="info">

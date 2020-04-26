@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'apps.pages',
     'apps.users',
     'apps.product',
-    'apps.perfil',
     'crispy_forms',
     'adminlte3',
 ]
