@@ -21,7 +21,7 @@
         <div class="info">
             {% if user.is_authenticated %}
                 <a href="#" class="d-block">Edit profile</a>
-                <a href="#" class="d-block">Logout</a>
+                <a href="{% url 'logout' %}" class="d-block">Logout</a>
             {% else %}
                 <a href="/accounts/login/" class="d-block">Login</a>
                 <a href="/accounts/signup/" class="d-block">SignUp</a>
