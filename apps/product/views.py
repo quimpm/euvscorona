@@ -5,8 +5,27 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from apps.product.models import Tag, Product
 import utilities.src.latlon as latlon
+from django.views import generic
+from .forms import ProductCreationForm
+from django import http
+
 
 # Create your views here.
+
+class AddProductPageView(generic.CreateView, LoginRequiredMixin):
+    form_class = ProductCreationForm
+    template_name = 'addproduct.html'
+    
+    def get_success_url(self):
+        return reverse_lazy('profile', kwargs={'pk':self.request.user.pk})
+
+    def form_valid(self, form):
+        product = form.save(commit=False)
+        product.creator = self.request.user
+        product.save()     
+        return http.HttpResponseRedirect(self.get_success_url())
+    
+
 class NearbyProductsByTagList(LoginRequiredMixin, ListView):
     model = Product
     context_object_name = 'products'
