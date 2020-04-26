@@ -21,7 +21,7 @@
         {% for product in products %}
             <div class="col-xs-4" style="padding: 20px;">
                 <div class="card">
-                    <img class="card-img-top" src="{% static 'img/product/' %}{{ product.photo }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ product.photo.url }}" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{ product.name }}</h5>
                       <p class="card-text">{{ product.description }}</p>
