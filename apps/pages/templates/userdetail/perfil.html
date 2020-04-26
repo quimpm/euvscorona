@@ -12,7 +12,7 @@
                     <div class="row ">
                         <div class="col-md-3 col-md-3-sm-3 col-xs-3 user-image text-center">
                             {% if profile.photo %}
-                                <img src="{{ profile.photo }}" class="rounded-circle">
+                                <img src="{{ profile.photo.url }}" class="rounded-circle">
                             {% else %}
                                 <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" class="rounded-circle">
                             {% endif %}
