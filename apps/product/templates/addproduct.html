@@ -22,14 +22,19 @@
                 <a href="/" style="color: #495057 !important;"><b>Commerce</b>MED</a>
             </div>
             <div class="col-xs-12" style="font-size: 1.0rem; font-weight: 300; margin-bottom: .9rem; text-align: center; color: #495057 !important;">
-                Sign Up
+                Create Product
             </div>
-            <form method="post">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button class="btn btn-success" type="submit">Sign Up</button>
+            <div class="col-xs-12" align="center">
+                <div class="col-xs-12" style="padding: 20px;"></div>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button class="btn btn-success" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="col-xs-3">&nbsp;</div>
-    </form>
+    
     </div>
 {% endblock %}

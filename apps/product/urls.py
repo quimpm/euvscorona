@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 urlpatterns = [
     #path('all/', views.TagAllList.as_view(), name='all'),
     path('search/', views.NearbyProductsByTagList.as_view(), name="nearbytag"),
+    path('add/', views.AddProductPageView.as_view(), name="addproduct"),
 ]
 
 
