@@ -3,6 +3,12 @@
 {% block title %}{{ "ComeerceMed" }}{% endblock %}
 
 {% block content %}
+
+{% if profile %}
+<p> there is {{ profile.username }} register </p>
+{% else %}
+  <p> There is no user. </p>
+{% endif %}
     <div class="container main-secction">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 image-section">
@@ -33,7 +39,7 @@
                         <div class="col-md-12 profile-header">
                             <div class="row">
                                 <div class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
-                                    <h1>Juan Perez</h1>
+                                  <h1>{{ perfil.username }}</h1>
                                     <h5>Developer</h5>
                                 </div>
                             </div>
