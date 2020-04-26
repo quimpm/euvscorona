@@ -1,3 +1,18 @@
-from django.test import TestCase
+from django.test import SimpleTestCase
+from django.urls import reverse, resolve
+from apps.perfil.views import PerfilView
 
-# Create your tests here.
+
+class PerfilpageTests(SimpleTestCase):
+
+    def test_perfilpage_status_code(self):
+        response = self.client.get('/profile/<id>')
+        self.assertEqual(response.status_code, 200)
+
+    def test_perfilpage_url_name(self):
+        response = self.client.get(reverse('profile'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_perfilpage_template(self):
+        response = self.client.get('profile/<id>/')
+        self.assertTemplateUsed(response, 'perfil.html')

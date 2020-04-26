@@ -9,5 +9,5 @@ from apps.users.models import CustomUser
 class PerfilView(LoginRequiredMixin, DetailView):
     model = get_user_model()
     template_name = "perfil.html"
-    login_url = reverse_lazy('login')
+    login_url = reverse_lazy('')
 

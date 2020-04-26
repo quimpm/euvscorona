@@ -15,13 +15,16 @@
         <div class="image">
           <img src="{% static 'img/user.png' size=90 %}" class="img-circle elevation-2" alt="User Image">
         </div>
+          {% if user.is_authenticated %}
         <div class="info">
           <a href="#" class="d-block">{% firstof request.user.get_full_name request.user.username %}</a>
         </div>
+          {% else %}
         <div class="info">
             <a href="/accounts/login/" class="d-block">Login</a>
             <a href="/accounts/signup/" class="d-block">SignUp</a>
         </div>
+      {% endif %}
       </div>
 {% endblock %}
 {% block nav_heading %}About ComerceMed{% endblock %}
