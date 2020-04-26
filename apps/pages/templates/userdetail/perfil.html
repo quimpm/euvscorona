@@ -27,6 +27,8 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <h1>{{ profile.username }}</h1>
+                            </div>
+                            <div class="row">
                                 <h5>{{ profile.description }}</h5>
                             </div>
                             <div class="row">
@@ -115,7 +117,7 @@
               <p class="card-text">{{ product.description }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="#"><button type="button" class="btn btn-sm btn-outline-secondary">{{ product.tag.name }}</button></a>
+                  <a href="/product/search/?q={{product.tag}}"><button type="button" class="btn btn-sm btn-outline-secondary">{{ product.tag.name }}</button></a>
                 </div>
               </div>
             </div>
