@@ -19,5 +19,3 @@ class NearbyProductsByTagList(LoginRequiredMixin, ListView):
         px = latlon.Point(self.request.user.lat, self.request.user.lon)
         return sorted(objs, key=latlon.get_lanlonkey(px))
 
-
-
