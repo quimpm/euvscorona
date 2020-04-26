@@ -39,4 +39,5 @@ class ProfileContextTest(TestCase):
 
     def test_context(self):
         self.assertIn('profile', self.request.context)
+        self.assertIn('products', self.request.context)
     
