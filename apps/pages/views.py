@@ -11,14 +11,8 @@ class HomePageView(TemplateView):
 
 
 class PerfilView(LoginRequiredMixin, DetailView):
-    model = get_user_model()
     template_name = "userdetail/perfil.html"
+    context_object_name = 'profiles'
     login_url = reverse_lazy('login')
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        perfil = self.model.objects.get(pk=self.request.user.pk)
-        context['perfil'] = perfil
-        return context
-
+    queryset = get_user_model().objects.all()
 
