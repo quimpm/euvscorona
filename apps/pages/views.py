@@ -17,7 +17,7 @@ class PerfilView(LoginRequiredMixin, DetailView):
     login_url = reverse_lazy('login')
     queryset = get_user_model().objects.all()
 
-    def get_context_data(self):
+    def get_context_data(self, **kwargs):
         context = {}
         context['products'] = Product.objects.filter(creator=self.kwargs.get(self.pk_url_kwarg))
         context.update(kwargs)
