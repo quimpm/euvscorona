@@ -11,11 +11,11 @@
             <div class="row user-left-part">
                 <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
                     <div class="row ">
-                        <div class="col-md-3 col-md-3-sm-3 col-xs-3 user-image text-center">
+                        <div class="col-md-3 col-md-3-sm-3 col-xs-3 user-image text-center img">
                             {% if profile.photo %}
-                                <img src="{{ profile.photo.url }}" class="rounded-circle img-responsive">
+                                <img src="{{ profile.photo.url }}" style="object-fit: cover !important;" class="rounded-circle img-fluid">
                             {% else %}
-                                <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" class="rounded-circle">
+                                <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" class="fillwidth">
                             {% endif %}
                         </div>
                     </div>
