@@ -3,17 +3,16 @@
 {% block title %}{{ "ComeerceMed" }}{% endblock %}
 
 {% block content %}
-    
-{% if profiles %}
-    <div class="container">
+
+{% if profile %}
     <div class="container main-secction">
         <div class="row">
             <div class="row user-left-part">
                 <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
                     <div class="row ">
                         <div class="col-md-3 col-md-3-sm-3 col-xs-3 user-image text-center">
-                            {% if profiles.photo %}
-                                <img src="{{ profiles.photo }}" class="rounded-circle">
+                            {% if profile.photo %}
+                                <img src="{{ profile.photo }}" class="rounded-circle">
                             {% else %}
                                 <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" class="rounded-circle">
                             {% endif %}
@@ -27,7 +26,7 @@
                     <div class="row profile-right-section-row">
                         <div class="col-md-12">
                             <div class="row">
-                                <h1>{{ profiles.username }}</h1>
+                                <h1>{{ profile.username }}</h1>
                             </div>
                             <div class="row">
                                 <div class="col-md-8">
@@ -48,7 +47,7 @@
                                                                     <label>TIN</label>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p>{{ profiles.tin }}</p>
+                                                                    <p>{{ profile.tin }}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -57,7 +56,7 @@
                                                                 </div>
                                                                 <div class="col-md-6">
 
-                                                                    <p>{{ profiles.email }}</p>
+                                                                    <p>{{ profile.email }}</p>
 
                                                                 </div>
                                                             </div>
@@ -67,7 +66,7 @@
                                                                 </div>
                                                                 <div class="col-md-6">
 
-                                                                    <p>{{ profiles.phone }}</p>
+                                                                    <p>{{ profile.phone }}</p>
 
                                                                 </div>
                                                             </div>
@@ -79,7 +78,7 @@
                                                                     <label>Country</label>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p>{{ profiles.country }}</p>
+                                                                    <p>{{ profile.country }}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -87,7 +86,7 @@
                                                                     <label>Fiscal Address</label>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p>{{ profiles.fiscal_address }}</p>
+                                                                    <p>{{ profile.fiscal_address }}</p>
                                                                 </div>
                                                             </div>
                                                 </div>
@@ -101,12 +100,11 @@
                 </div>
         </div>
     </div>
-    </div>
     <div class="album py-5 bg-light">
     <div class="container">
 
       <div class="row">
-          <!-- {% for product in products %}
+          {% for product in products %}
 
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
@@ -125,7 +123,7 @@
           </div>
         </div>
           {% endfor %}
-           -->
+           <!--
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
@@ -155,7 +153,8 @@
               </div>
             </div>
           </div>
-        </div>
+
+        </div>-->
       </div>
     </div>
   </div>
