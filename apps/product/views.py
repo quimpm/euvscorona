@@ -12,7 +12,7 @@ class NearbyProductsByTagList(LoginRequiredMixin, ListView):
     login_url = reverse_lazy('login')
     
     def get_queryset(self):
-        tag = get_object_or_404(Tag, name=self.kwargs['tag'])
+        tag = get_object_or_404(Tag, self.request.GET.get('q'))
         objs = Product.objects.filter(tag=tag)
         px = latlon.Point(self.request.user.lat, self.request.user.lon)
         return sorted(objs, key=latlon.get_lanlonkey(px))
@@ -25,7 +25,6 @@ class TagAllList(LoginRequiredMixin, ListView):
     def get_queryset(self):
         tag = get_object_or_404(Tag, name='all')
         objs = Product.objects.filter(tag=tag)
-        print(self.request)
         px = latlon.Point(self.request.user.lat, self.request.user.lon)
         return sorted(objs, key=latlon.get_lanlonkey(px))
 

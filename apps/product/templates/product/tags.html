@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ "ComeerceMed" }}{% endblock %}
+{% block title %}{{ "CommerceMed" }}{% endblock %}
 
 {% block content %}
 <div class="container" style="background-color: ;">
     <div class="col-xs-12">
-        <input type="text" placeholder="Warite a key word and search" id="sercher">
-        <a href="{% url 'nearbytag' project.pk %}" class="btn btn-primary">Search</a>
+        <input type="text" placeholder="Write a key word and search" id="sercher">
+        <a href="{% url 'nearbytag' project.name %}" class="btn btn-primary">Search</a>
     </div>
     <div class="col-xs-12">
         {% for product in products %}
