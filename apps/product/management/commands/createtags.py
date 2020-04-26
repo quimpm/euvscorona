@@ -6,4 +6,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         pr = Tag.objects.create(name='all')
+        pr = Tag.objects.create(name='farming')
+        pr = Tag.objects.create(name='metallurgy')
         pr.save()
