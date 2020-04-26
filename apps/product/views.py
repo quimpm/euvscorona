@@ -16,13 +16,13 @@ class NearbyProductsByTagList(LoginRequiredMixin, ListView):
     def get_queryset(self):
         def get_key(func):
             def a(product):
-                user = get_user_model().objects.get(pk=product.creator)
-                return(func(user))
+                return(func(product.creator))
             return a
-
+        px = latlon.Point(self.request.user.lat, self.request.user.lon)
         tag = self.request.GET.get('q', 'all')
         tags = Tag.objects.get(name=tag)
+        if tag == "all":
+            return sorted(Product.objects.all(), key=get_key(latlon.get_lanlonkey(px)))
         objs = Product.objects.filter(tag=tags)
-        px = latlon.Point(self.request.user.lat, self.request.user.lon)
         return sorted(objs, key=get_key(latlon.get_lanlonkey(px)))
 
