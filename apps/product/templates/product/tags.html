@@ -43,7 +43,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="col-xs-12" align="center">
-                            <img class="card-img-top" src="{{ product.photo }}" alt="Card image cap">
+                            <img class="card-img-top" src="{% static 'img/product/' %}{{ product.photo }}" alt="Card image cap">
                         </div>
                         <div class="col-xs-12" align="center">
                             {{ product.description }}
