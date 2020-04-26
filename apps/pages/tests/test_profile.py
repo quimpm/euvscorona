@@ -1,4 +1,4 @@
-from django.test import SimpleTestCase, RequestFactory, TestCase
+from django.test import SimpleTestCase, RequestFactory, TestCase, Client
 from django.urls import reverse, resolve
 from django.contrib.auth import get_user_model
 from apps.pages.views import PerfilView
@@ -6,42 +6,37 @@ from apps.pages.views import PerfilView
 class PerfilpageTests(TestCase):
 
     def setUp(self):
-        self.user = get_user_model().objects.create(
-                username='garga', password='testpass123', tin='12345T', lat=1, lon=1
+        self.user = get_user_model().objects.create_user(
+                username='garga', password='testpass123', tin='12345T', lat=1, lon=1, email='gar@ga.com'
                 )
         self.user.save()
-        self.client.login(username='garga', password='testpass123')
+        self.client.login(username=self.user.username, password='testpass123')
         
 
     def test_perfilpage_status_code(self):
-        response = self.client.get('/profile/1')
+        response = self.client.get(f'/profile/{ self.user.pk }/')
         self.assertEqual(response.status_code, 200)
 
     def test_perfilpage_url_name(self):
-        response = self.client.get(reverse('profile', args=[1]))
-        print(response)
+        response = self.client.get(reverse('profile', kwargs={'pk':self.user.pk}))
         self.assertEqual(response.status_code, 200)
 
     def test_perfilpage_template(self):
-        response = self.client.get('profile/1/')
+        response = self.client.get(f'/profile/{ self.user.pk }/')
         self.assertTemplateUsed(response, 'userdetail/perfil.html')
 
 
 class ProfileContextTest(TestCase):
 
     def setUp(self):
-        self.user = get_user_model().objects.create(
+        self.user = get_user_model().objects.create_user(
                     username='garga', password='testpass123', tin='12345T', lat=1, lon=1
                 )
         self.user.save()
-        self.factory = RequestFactory()
-        self.request = self.factory.get('profile/1/)')
-        self.view = PerfilView()
-        self.view.setup(self.request)
-        print(self.view)
+        self.client.login(username='garga', password='testpass123')
+        self.request = self.client.get(reverse('profile', kwargs={'pk':self.user.pk}))
 
 
     def test_context(self):
-        context = self.view.get_context_data()
-        self.assertIn('profiles', context)
+        self.assertIn('profile', self.request.context)
     
