@@ -2,24 +2,29 @@
 ![CommerceMED](https://i.ibb.co/yfwPJJZ/logo.png)
 
 ## Inspiration
-Nowadays, with the arrival of the new economic consequences of the coronavirus crisis, our main inspiration raised on how to increase the efficiency to reduce the transaction costs in every European business.
+Nowadays, with the arrival of the new economic consequences of the coronavirus crisis, our main inspiration raised on how to increase the efficiency to reduce the transaction costs in every European business. Also, we wanted to promote internal business transactions between European companies.
 
 ## What it does
-CommerMed helps companies to find other companies in Europe, which they manufacture or produces what the company needs. 
+CommerceMed helps companies to find products that they need to produce here own products, but making sure that those products are from the closest European Companies.
 
-e.g. Imagine a company that manufactures sanitary napkins. Probably it's obtaining the raw material from some Chinese factory. Increasing Europe's internal economy has always been an important mission, but with the economic crisis caused by the coronavirus, it is even more essential.CommerceMed will help this company in the example to contact easily with other companies (in Europe) that produce the raw material that it needs.
+e.g. Imagine a company that manufactures sanitary napkins. Probably it's obtaining the raw material from some Chinese factory. Increasing Europe's internal economy has always been an important mission, but with the economic crisis caused by the coronavirus, it is even more essential. CommerceMed will help this company in the example to contact easily with other companies (in Europe) that produce the raw material that it needs.
 
 ## How we built it
-We build with a lot of love and with expectations about a good (healthily and economically) future for all us.
+We build it with a lot of love and with expectations about a good (healthily and economically) future for all us.
 
-Technically front-end and back-end are built with Django, knows as "the Web framework for perfectionists with deadlines". With this, the architecture of the application is an MVT architecture (Model-View-Template). Data is managed with Postgresql. We have used Docker for simplifying and to accelerating the workflow.
+Technically front-end and back-end are built with Django, knows as "the Web framework for perfectionists with deadlines". With this, the architecture of the application is an MVT architecture (Model-View-Template). Data is managed with Postgresql. We have used Docker for simplifying and to accelerate the workflow.
 
 ## Challenges I ran into
 Make an application usable enough, for connecting companies. **All the application has been made during the weekend.**
 
 ## What's next for ComercialMedApp
+Making the search tool more powerfool in orther to make the search for the users as easy as possible.
+
+Finish a couple of things that due to the lack of time we havent been able to implement, becouse ase we said the application was made entirely this weekend.
+
 Implement directly communication (e.g. via chat).
-To build a feed page. 
+
+Make a Mobile APP in orther to make easyer the communication.
 
 ## Run locally
 ```
